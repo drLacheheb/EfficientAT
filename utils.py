@@ -18,8 +18,13 @@ def cnn_out_size(in_size, padding, dilation, kernel, stride):
     return math.floor(s / stride + 1)
 
 
-def collapse_dim(x: Tensor, dim: int, mode: str = "pool", pool_fn:  Callable[[Tensor, int], Tensor] = torch.mean,
-                 combine_dim: int = None):
+def collapse_dim(
+    x: Tensor,
+    dim: int,
+    mode: str = "pool",
+    pool_fn: Callable[[Tensor, int], Tensor] = torch.mean,
+    combine_dim: Optional[int] = None,
+):
     if mode == "combine":
         s = list(x.size())
         s[combine_dim] *= dim
