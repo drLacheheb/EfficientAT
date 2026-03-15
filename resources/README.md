@@ -1,1 +1,0 @@
-Download the latest version from this repo's Github Releases and place them inside this folder.
